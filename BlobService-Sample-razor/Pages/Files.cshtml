@@ -1,0 +1,38 @@
+@page
+@model FilesModel
+@using EmrickExtensions
+
+<h1 class="display-4">Files</h1>
+
+<p>The Lite version of the Blob Service and Sample App does not contain the delete and download features.  Therefore the Delete and Download File buttons are disabled.</p>
+
+<p>
+    <strong>Current Folder:</strong> @Model.CurrentFolder
+</p>
+<form method="post">
+    <table class="table">
+        @foreach (var thisItem in @Model.Files)
+        {
+            <tr>
+                <td>
+                    @if (thisItem.IsFolder() || @Model.IsFileViewable(thisItem))
+                    {
+                        <button type="submit" asp-page-handler="view" asp-route-itemPath="@thisItem" class="btn btn-link">@thisItem</button>
+                    }
+                    else
+                    {
+                        <button type="submit" asp-page-handler="view" asp-route-itemPath="@thisItem" class="btn btn-link" disabled>@thisItem</button>
+                    }
+                </td>
+                <td>
+                    <button type="submit" asp-page-handler="delete" asp-route-currentFolder="@Model.CurrentFolder" asp-route-itemPath="@thisItem" 
+                    class="btn btn-primary" disabled>Delete</button>
+                    @if (!thisItem.IsFolder())
+                    {
+                        <button type="submit" asp-page-handler="download" asp-route-itemPath="@thisItem" class="btn btn-secondary" disabled>Download File</button>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+</form>

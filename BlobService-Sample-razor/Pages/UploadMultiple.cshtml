@@ -1,0 +1,20 @@
+@page
+@model UploadMultipleModel
+
+<h1 class="display-4">Upload Multiple</h1>
+
+<p>The Lite version of the Blob Service and Sample App does not contain the upload feature.  Therefore the Upload button is disabled.</p>
+
+<form method="post" enctype="multipart/form-data">
+
+    <div class="mb-3">
+        <label for="folderPath" class="form-label">Folder</label>
+        <input class="form-control" asp-for="FolderPath">
+        <div class="form-text">Specify which folder to upload the file to.</div>
+    </div>
+    <div class="input-group mb-3">
+        <input type="file" class="form-control" asp-for="FileUploads" aria-describedby="inputGroupFileAddon03" aria-label="Upload" multiple>
+        <button class="btn btn-primary" type="submit" asp-page-handler="upload" disabled>Upload</button>
+    </div>
+
+</form>

@@ -1,0 +1,39 @@
+@model BlobService_mvc.Models.FilesModel
+@using EmrickExtensions
+
+<h1 class="display-4">Files</h1>
+
+<p>The Lite version of the Blob Service and Sample App does not contain the delete and download features.  Therefore the Delete and Download File buttons are disabled.</p>
+
+<p>
+    <strong>Current folder:</strong>
+    @Html.Label("CurrentFolder", @Model.CurrentFolder, null)
+</p>
+
+<table class="table">
+@{
+
+    foreach (var thisFile in @Model.Files){
+        <tr>
+            <td>
+                @if (thisFile.IsFolder() || @Model.IsFileViewable(thisFile))
+                {
+                    @Html.ActionLink(thisFile, "ViewFile", "Home", new {FilePath = thisFile}) 
+                }
+                else
+                {
+                    @thisFile
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "DeleteFile", "Home", new {currentFolder = @Model.CurrentFolder, FilePath = thisFile}, new {@class = "btn btn-primary disabled"})
+                @if(!thisFile.IsFolder()) 
+                {
+                    @Html.ActionLink("Download File", "DownloadFile", "Home", new {filePath = thisFile}, new {@class = "btn btn-secondary disabled"})
+                }
+            </td>
+        </tr>
+    }
+
+}
+</table>

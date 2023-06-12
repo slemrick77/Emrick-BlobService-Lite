@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-left">
+    <h1 class="display-4">Welcome</h1>
+    <p>Welcome to the sample ASP.NET Core MVC web app demonstrating the use of my Blob Service to interact with files in an Azure Blob Storage account.</p>
+    <p><strong>This sample demonstrates a "Lite" version of my Blob Service that does not contain the upload, download, and delete features.  Buttons that perform those operations are disabled.</strong></p>
+    <p>
+        Click <a asp-area="" asp-controller="Home" asp-action="Files">Files</a> to see a demonstration of browsing, downloading, viewing, and deleting
+        files from an Azure storage account.
+    </p>
+    <p>
+        Click <a asp-area="" asp-controller="Home" asp-action="Upload">Upload</a> to see a demonstration of uploading a single file to 
+        an Azure storage account.
+    </p>
+    <p>
+        Click <a asp-area="" asp-controller="Home" asp-action="UploadMultiple">Upload Multiple</a> to see a demonstration of uploading multiple files to 
+        an Azure storage account.
+    </p>
+</div>

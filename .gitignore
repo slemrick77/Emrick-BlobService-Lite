@@ -1,0 +1,7 @@
+/BlobService-Sample-mvc/obj
+/BlobService-Sample-mvc/bin
+/BlobService-Sample-mvc/.vscode
+/BlobService-Sample-razor/obj
+/BlobService-Sample-razor/bin
+/BlobService-Sample-razor/.vscode
+appsettings.Development.json

@@ -1,0 +1,19 @@
+
+<h1 class="display-4">Upload</h1>
+
+<p>The Lite version of the Blob Service and Sample App does not contain the upload feature.  Therefore the Upload button is disabled.</p>
+
+<form asp-controller="Home" asp-action="Upload" method="post" enctype="multipart/form-data">
+    <!--<input type="file" name="file" />-->
+    <div class="mb-3">
+        <label for="folderPath" class="form-label">Folder</label>
+        <input class="form-control" name="folderPath">
+        <div class="form-text">Specify which folder to upload the file to.</div>
+    </div>
+    <div class="input-group mb-3">
+        <input type="file" class="form-control" name="file" aria-describedby="inputGroupFileAddon03" aria-label="Upload">
+        <button class="btn btn-primary" type="submit" id="inputGroupFileAddon03" disabled>Upload</button>
+    </div>
+
+    <!--<button type="submit">Upload File</button>-->
+</form>
