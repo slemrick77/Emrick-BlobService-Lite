@@ -50,9 +50,11 @@ These five simple methods will allow you to interact with your files in Azure Bl
 |---|---|
 |`List<string> GetContentsOfFolder(string folderPath)`|Retrieves a list of file names in the specified folder.|
 |`System.IO.Stream GetFile(string filePath)`|Retrieves the specified file.|
-|`void DeleteFile(string filePath)`|Deletes the specified file.
-|`void DeleteFolderAndContents(string folderPath)`|Deletes the specified folder and all contents.|
-|`public void UploadFile(string destinationFilePath, Stream fileData, bool overwrite = false)`|Uploads a specified file.|
+|*`void DeleteFile(string filePath)`*|*Deletes the specified file.*  ***(Not available in the Lite version)*** *|
+|*`void DeleteFolderAndContents(string folderPath)`*|*Deletes the specified folder and all contents.*  ***(Not available in the Lite version)*** *|
+|*`public void UploadFile(string destinationFilePath, Stream fileData, bool overwrite = false)`*|*Uploads a specified file.*  ***(Not available in the Lite version)*** *|
+
+ *Please visit me [here](https://www.upwork.com/services/product/development-it-asp-net-core-code-that-can-be-used-to-connect-your-web-app-to-azure-storage-1645239349771182080?ref=project_share) if you are interested in the full version.
 
 ## About Azure Blob Storage
 
